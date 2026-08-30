@@ -1,7 +1,7 @@
 Assignment 1 - Hello World: Basic Deployment w/ Git, GitHub, Render
 
 Owen Matthews
-http://a1-OwenMatthews.onrender.com
+[http://a1-OwenMatthews.onrender.com](https://a1-owen-matthews.onrender.com)
 
 This project shows my involvements on campus at WPI, my courses I've taken at WPI, and my work experience. I used HTML, CSS for styling, and JavaScript for a simple animation
 
