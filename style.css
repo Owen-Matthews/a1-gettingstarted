@@ -47,7 +47,7 @@ table, td, th {
 }
 
 th {
-    background-color: var(--accent); /* NEW: uses palette color */
+    background-color: var(--accent);
     color: white;
 }
 

@@ -28,7 +28,6 @@ server.listen( process.env.PORT || port )
 
 const sendFile = function( response, filename ) {
   fs.readFile( filename, function( err, content ) {
-    response.setHeader( 'Content-Type', contentType )
     response.end( content )
   })
 }
