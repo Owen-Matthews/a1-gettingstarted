@@ -1,6 +1,17 @@
 const http = require('http'),
-      fs   = require('fs'),
-      port = 3000
+    fs   = require('fs'),
+    path = require('path'),
+    port = 3000
+
+
+const contentTypes = {
+  '.html': 'text/html',
+  '.css':  'text/css',
+  '.js':   'text/javascript',
+  '.png':  'image/png',
+  '.jpg':  'image/jpeg',
+  '.jpeg': 'image/jpeg'
+}
 
 const server = http.createServer( function( request,response ) {
   switch( request.url ) {
@@ -27,7 +38,11 @@ const server = http.createServer( function( request,response ) {
 server.listen( process.env.PORT || port )
 
 const sendFile = function( response, filename ) {
-   fs.readFile( filename, function( err, content ) {
-     response.end( content, 'utf-8' )
-   })
+  const ext = path.extname( filename )
+  const contentType = contentTypes[ ext ] || 'application/octet-stream'
+
+  fs.readFile( filename, function( err, content ) {
+    response.setHeader( 'Content-Type', contentType )
+    response.end( content )
+  })
 }
